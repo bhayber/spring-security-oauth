@@ -23,8 +23,10 @@ import {AppService} from './app.service'
 export class LoginComponent {
     public loginData = {username: "", password: ""};
 
-    constructor(private _service:AppService) {}
- 
+    constructor(private _service:AppService) {
+        
+    }
+    
     login() {
         this._service.obtainAccessToken(this.loginData);
     }
