@@ -19,7 +19,8 @@ export class AppService {
  
   constructor(
     private _router: Router, private _http: Http, private oauthService: OAuthService){
-        this.oauthService.loginUrl = 'http://localhost:8081/spring-security-oauth-server/oauth/authorize'; 
+      console.log("Hier bin ich");  
+      this.oauthService.loginUrl = 'http://localhost:8081/spring-security-oauth-server/oauth/authorize'; 
         this.oauthService.redirectUri = 'http://localhost:8086/';
         this.oauthService.clientId = "sampleClientId";
         this.oauthService.scope = "read write foo bar";    

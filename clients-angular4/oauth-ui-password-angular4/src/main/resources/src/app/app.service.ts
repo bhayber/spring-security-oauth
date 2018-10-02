@@ -24,7 +24,7 @@ export class AppService {
     params.append('grant_type','password');
     params.append('client_id','fooClientIdPassword');
 
-    let headers = new Headers({'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'Authorization': 'Basic '+btoa("fooClientIdPassword:secret")});
+    let headers = new Headers({'Content-type': 'application/x-www-form-urlencoded; charset=utf-8', 'Authorization': 'Basic '+btoa("fooClientIdPassword:$2b$10$QR158QqSlGde0A3eEcLq6.1UTQZIeT6GzIvoXGxs6uZnOFola3K1S")});
     let options = new RequestOptions({ headers: headers });
     console.log(params.toString());
      this._http.post('http://localhost:8081/spring-security-oauth-server/oauth/token', params.toString(), options)

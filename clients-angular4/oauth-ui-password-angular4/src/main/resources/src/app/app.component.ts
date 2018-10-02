@@ -9,7 +9,9 @@ import {Component} from '@angular/core';
     </div>
   </div>
 </nav>
-<router-outlet></router-outlet>`
+<login-form></login-form>`
 })
 
-export class AppComponent {}
+export class AppComponent {
+
+}

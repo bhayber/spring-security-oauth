@@ -39,11 +39,19 @@ public class OAuth2AuthorizationServerConfigJwt extends AuthorizationServerConfi
 	@Autowired
 	private Environment env;
 
+	@Autowired
+	private BCryptPasswordEncoder bCryptPasswordEncoder;
+
 	@Value("classpath:schema.sql")
 	private Resource schemaScript;
 
 	@Value("classpath:data.sql")
 	private Resource dataScript;
+
+	// @PostConstruct
+	// public void init() {
+	// System.out.println(bCryptPasswordEncoder.encode("secret"));
+	// }
 
 	@Autowired
 	@Qualifier("authenticationManagerBean")
@@ -84,11 +92,6 @@ public class OAuth2AuthorizationServerConfigJwt extends AuthorizationServerConfi
 		// ClassPathResource("mytest.jks"), "mypass".toCharArray());
 		// converter.setKeyPair(keyStoreKeyFactory.getKeyPair("mytest"));
 		return converter;
-	}
-
-	@Bean
-	public BCryptPasswordEncoder passwordEncoder() {
-		return new BCryptPasswordEncoder();
 	}
 
 	@Bean
