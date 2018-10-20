@@ -34,16 +34,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		return new UserDetailsServiceImp();
 	};
 
-	// @Autowired
-	// public void globalUserDetails(final AuthenticationManagerBuilder auth) throws
-	// Exception {
-	// // @formatter:off
-	// auth.inMemoryAuthentication().withUser("john").password(passwordEncoder.encode("123")).roles("USER").and()
-	// .withUser("tom").password(passwordEncoder.encode("111")).roles("ADMIN").and().withUser("user1")
-	// .password(passwordEncoder.encode("pass")).roles("USER").and().withUser("admin")
-	// .password(passwordEncoder.encode("admin")).roles("ADMIN");
-	// }// @formatter:on
-
 	@Override
 	@Bean
 	public AuthenticationManager authenticationManagerBean() throws Exception {
