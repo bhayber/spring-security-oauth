@@ -7,7 +7,6 @@ import org.springframework.security.oauth2.config.annotation.web.configuration.R
 
 @EnableResourceServer
 @Configuration
-
 public class OAuth2ResourceServerConfig extends ResourceServerConfigurerAdapter {
 
 	@Override
