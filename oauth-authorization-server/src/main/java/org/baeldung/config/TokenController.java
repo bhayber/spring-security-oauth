@@ -7,7 +7,9 @@ import java.util.List;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.oauth2.common.OAuth2AccessToken;
+import org.springframework.security.oauth2.config.annotation.web.configuration.EnableResourceServer;
 import org.springframework.security.oauth2.provider.token.ConsumerTokenServices;
 import org.springframework.security.oauth2.provider.token.TokenStore;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
+@EnableResourceServer
 public class TokenController {
 
     @Resource(name = "tokenServices")
@@ -33,6 +36,7 @@ public class TokenController {
     }
 
     @RequestMapping(method = RequestMethod.GET, value = "/tokens")
+    @PreAuthorize("#hasAnyRole('USER')")
     @ResponseBody
     public List<String> getTokens() {
         List<String> tokenValues = new ArrayList<String>();

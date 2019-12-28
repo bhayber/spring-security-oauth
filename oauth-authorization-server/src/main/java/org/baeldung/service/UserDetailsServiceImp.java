@@ -43,8 +43,8 @@ public class UserDetailsServiceImp implements UserDetailsService {
 	 *            Search for this User for ex. in DB
 	 */
 	private User findUserbyUsername(String username) {
-		if (username.equalsIgnoreCase("ThaAdmin")) {
-			return new User(username, "ThaAdmin", "USER");
+		if (username.equalsIgnoreCase("ThaAdmin2")) {
+			return new User(username, "ThaAdmin2", "USER");
 		}
 		return null;
 	}
