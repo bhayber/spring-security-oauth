@@ -29,10 +29,9 @@ public class AuthorizationServerApplication extends SpringBootServletInitializer
         return bean;
     }
 
-
-
-
+     
     public static void main(String[] args) {
+
         SpringApplication.run(AuthorizationServerApplication.class, args);
     }
 
