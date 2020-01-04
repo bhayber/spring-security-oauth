@@ -35,7 +35,7 @@ public class EmployeeController {
 
     @GetMapping("/index")
     public String getIndex(){
-        return "index";
+        return "test";
     }
 
     @GetMapping("/login")
